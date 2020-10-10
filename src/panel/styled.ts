@@ -5,7 +5,7 @@ const colors = {
   D300: "#424242",
   D400: "#303030",
   D500: "#212121",
-  L500: "#DDF2F2",
+  L500: "#DDF2F2"
 };
 
 export const GlobalStyles = createGlobalStyle`

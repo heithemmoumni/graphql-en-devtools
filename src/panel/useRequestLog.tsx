@@ -7,7 +7,7 @@ const RequestLogContext = createContext<RequestLogContextProps>({
   pushRequest: () => {},
   selected: null,
   handleSelect: () => {},
-  flush: () => {},
+  flush: () => {}
 });
 
 export const useRequestLog = () => useContext(RequestLogContext);
@@ -17,7 +17,7 @@ export const RequestLogProvider = ({ children }) => {
   const [selected, setSelected] = useState<Request | null>(null);
 
   const pushRequest = (req: Request) => {
-    setRequests((old) => old.concat(req));
+    setRequests(old => old.concat(req));
   };
 
   const handleSelect = (index: number) => {

@@ -14,18 +14,18 @@ const Panel = () => {
   const { requests, pushRequest, selected } = requestsLog;
 
   useEffect(() => {
-    chrome.devtools.network.onRequestFinished.addListener((request) => {
+    chrome.devtools.network.onRequestFinished.addListener(request => {
       const url = request.request.url;
 
       if (request.request.method === "POST" && url.includes("graphql")) {
         const req = JSON.parse(request.request.postData.text)[0];
 
-        request.getContent((body) => {
+        request.getContent(body => {
           pushRequest({
             operation: req.operationName,
             variables: req.variables,
             query: req.query,
-            content: JSON.parse(body)[0],
+            content: JSON.parse(body)[0]
           });
         });
       }

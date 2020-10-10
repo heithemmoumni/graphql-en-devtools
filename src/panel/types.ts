@@ -1,5 +1,3 @@
-import React from "react";
-
 export interface RequestLogContextProps {
   requests: Array<Request>;
   pushRequest: (req: Request) => void;

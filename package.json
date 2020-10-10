@@ -6,6 +6,8 @@
   "scripts": {
     "build": "webpack --config webpack.prod.js",
     "dev": "webpack -w --config webpack.dev.js",
+    "lint": "npx tsdx lint src",
+    "lint:fix": "npm run lint -- --fix",
     "postinstall": "npx install-types"
   },
   "repository": {
@@ -41,6 +43,7 @@
     "babel-plugin-prismjs": "^2.0.1",
     "install-types": "^2.0.1",
     "ts-loader": "^8.0.4",
+    "tsdx": "^0.14.0",
     "typescript": "^4.0.3",
     "webpack": "^4.44.2",
     "webpack-cli": "^3.3.12",
