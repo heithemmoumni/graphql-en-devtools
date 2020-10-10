@@ -7,6 +7,7 @@ const RequestLogContext = createContext<RequestLogContextProps>({
   pushRequest: () => {},
   selected: null,
   handleSelect: () => {},
+  flush: () => {},
 });
 
 export const useRequestLog = () => useContext(RequestLogContext);
@@ -23,9 +24,14 @@ export const RequestLogProvider = ({ children }) => {
     setSelected(requests[index]);
   };
 
+  const flush = () => {
+    setSelected(null);
+    setRequests([]);
+  };
+
   return (
     <RequestLogContext.Provider
-      value={{ requests, pushRequest, selected, handleSelect }}
+      value={{ requests, pushRequest, selected, handleSelect, flush }}
     >
       {children}
     </RequestLogContext.Provider>

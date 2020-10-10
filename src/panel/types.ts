@@ -5,6 +5,7 @@ export interface RequestLogContextProps {
   pushRequest: (req: Request) => void;
   selected: Request | null;
   handleSelect: (index: number) => void;
+  flush: () => void;
 }
 
 export interface Request {
