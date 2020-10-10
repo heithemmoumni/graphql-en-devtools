@@ -19,6 +19,9 @@ export const GlobalStyles = createGlobalStyle`
 export const Grid = styled.div`
   display: flex;
   height: 100%;
+  & > div {
+    overflow-y: scroll;
+  }
   & > div:nth-child(1) {
     width: 20%;
   }

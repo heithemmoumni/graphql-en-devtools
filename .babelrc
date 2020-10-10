@@ -1,0 +1,12 @@
+{
+  "plugins": [
+    [
+      "prismjs",
+      {
+        "languages": ["json", "graphql"],
+        "theme": "twilight",
+        "css": true
+      }
+    ]
+  ]
+}

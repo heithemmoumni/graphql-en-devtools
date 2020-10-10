@@ -9,7 +9,7 @@ export interface RequestLogContextProps {
 
 export interface Request {
   operation: string;
-  variables: string;
+  variables: any;
   query: string;
-  content: string;
+  content: any;
 }
