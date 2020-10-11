@@ -1,6 +1,7 @@
 import React from "react";
-import Code from "./Code";
+import { FcAnswers, FcOvertime } from "react-icons/fc";
 
+import Code from "./Code";
 import { useRequestLog } from "./useRequestLog";
 import { Header, Body } from "./styled";
 
@@ -13,10 +14,17 @@ const ResponseSection = () => {
       <Header>Response</Header>
       <Body>
         {selected && (
-          <div>
-            <h3>Body</h3>
-            <Code json={true} value={selected.content} />
-          </div>
+          <>
+            <div>
+              <span>
+                <FcAnswers /> {selected.status} <FcOvertime /> {selected.time}ms
+              </span>
+            </div>
+            <div>
+              <h3>Body</h3>
+              <Code json={true} value={selected.content} />
+            </div>
+          </>
         )}
       </Body>
     </div>

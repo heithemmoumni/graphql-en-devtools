@@ -1,6 +1,6 @@
 import React from "react";
 import { ToolbarWrapper } from "./styled";
-import { AiFillDelete } from "react-icons/ai";
+import { FcDeleteDatabase } from "react-icons/fc";
 
 import { useRequestLog } from "./useRequestLog";
 
@@ -11,7 +11,7 @@ const Toolbar = () => {
 
   return (
     <ToolbarWrapper>
-      <AiFillDelete onClick={() => flush()} />
+      <FcDeleteDatabase onClick={() => flush()} />
     </ToolbarWrapper>
   );
 };

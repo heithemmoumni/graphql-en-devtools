@@ -11,4 +11,6 @@ export interface Request {
   variables: any;
   query: string;
   content: any;
+  status: number;
+  time: number;
 }

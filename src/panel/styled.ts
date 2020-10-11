@@ -5,7 +5,7 @@ const colors = {
   D300: "#424242",
   D400: "#303030",
   D500: "#212121",
-  L500: "#DDF2F2"
+  L500: "#DDF2F2",
 };
 
 export const GlobalStyles = createGlobalStyle`
@@ -54,6 +54,7 @@ export const Header = styled.div`
 export const Body = styled.div`
   overflow-y: scroll;
   max-height: calc(100vh - 64px);
+  padding: 6px;
 `;
 
 export const Operation = styled.div`
