@@ -16,6 +16,9 @@ export const GlobalStyles = createGlobalStyle`
     background: ${colors.D500};
     color: ${colors.L500}
   }
+  * {
+    transition: all 0.3s ease-out;
+  }
   * ::-webkit-scrollbar {
     width: 12px;
     background: rgba(0, 0, 0, 0.9);
@@ -27,6 +30,9 @@ export const GlobalStyles = createGlobalStyle`
   }
   * ::-webkit-scrollbar-thumb {
     background: ${colors.D400};
+  }
+  pre {
+    position: relative;
   }
 `;
 
@@ -80,5 +86,21 @@ export const ToolbarWrapper = styled.div`
   > * {
     cursor: pointer;
     padding: 8px;
+  }
+`;
+
+export const CopyButton = styled.span`
+  position: absolute;
+  right: 2px;
+  top: 2px;
+  font-size: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+  padding: 2px;
+  cursor: pointer;
+  &:hover {
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.3);
   }
 `;
