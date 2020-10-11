@@ -4,10 +4,11 @@
   "description": "GraphQL en Devtools :wrench:",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --config webpack.prod.js",
+    "build": "webpack --config webpack.prod.js && npm run pack",
     "dev": "webpack -w --config webpack.dev.js",
     "lint": "npx tsdx lint src",
     "lint:fix": "npm run lint -- --fix",
+    "pack": "zip -r extension.zip dist",
     "postinstall": "npx install-types"
   },
   "repository": {

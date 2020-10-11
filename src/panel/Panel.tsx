@@ -7,6 +7,7 @@ import Toolbar from "./Toolbar";
 import OperationSection from "./OperationSection";
 import RequestSection from "./RequestSection";
 import ResponseSection from "./ResponseSection";
+import { flatten } from "../utils/flatten";
 
 const Panel = () => {
   const requestsLog = useRequestLog();
@@ -18,14 +19,16 @@ const Panel = () => {
       const url = request.request.url;
 
       if (request.request.method === "POST" && url.includes("graphql")) {
-        const req = JSON.parse(request.request.postData.text)[0];
+        const postData = JSON.parse(request.request.postData.text);
+
+        const req = flatten(postData);
 
         request.getContent((body) => {
           pushRequest({
             operation: req.operationName.trim(),
             variables: req.variables,
             query: req.query,
-            content: JSON.parse(body)[0],
+            content: flatten(JSON.parse(body)),
             status: request.response.status,
             time: Number(request.time.toFixed(0)),
           });
