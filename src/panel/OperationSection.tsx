@@ -1,18 +1,12 @@
-import React, {useState} from "react";
+import React from "react";
 
 import { Header, Body, Operation } from "./styled";
 import { useRequestLog } from "./useRequestLog";
 
 const OperationSection = () => {
   const requestsLog = useRequestLog();
-  const [selectedIndex, setSelectedIndex] = useState<number>(null)
 
-  const { requests, handleSelect } = requestsLog;
-
-  const handleOperationSelect = (index: number) => {
-    handleSelect(index)
-    setSelectedIndex(index)
-  }
+  const { requests, handleSelect, selected } = requestsLog;
  
   return (
     <div>
@@ -21,8 +15,8 @@ const OperationSection = () => {
         {requests.map((req, index) => (
           <Operation
             key={`${req.operation}-${index}`}
-            onClick={() => handleOperationSelect(index)}
-            selected={selectedIndex === index}
+            onClick={() => handleSelect(index)}
+            selected={req.operation === selected?.operation}
           >
             {index + 1}. {req.operation}
           </Operation>
