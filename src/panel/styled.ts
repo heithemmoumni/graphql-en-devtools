@@ -1,4 +1,4 @@
-import styled, { createGlobalStyle } from "styled-components";
+import styled, { createGlobalStyle, css } from "styled-components";
 
 const colors = {
   D200: "#505050",
@@ -63,7 +63,7 @@ export const Body = styled.div`
   padding: 6px;
 `;
 
-export const Operation = styled.div`
+export const Operation = styled.div<{ selected: boolean }>`
   padding-left: 6px;
   padding: 3px;
   border-bottom: 1px solid #000;
@@ -74,6 +74,12 @@ export const Operation = styled.div`
   &:active {
     background: ${colors.D300} !important;
   }
+  ${({ selected }) => css`
+  ${selected &&
+  css`
+  background: ${colors.D300};
+  `}
+`}
 `;
 
 export const ToolbarWrapper = styled.div`
