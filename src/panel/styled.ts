@@ -70,8 +70,7 @@ export const Operation = styled.div<{ selected: boolean }>`
   cursor: pointer;
   font-size: 18px;
   &:hover,
-  &:focus,
-  &:active {
+  &:focus {
     background: ${colors.D300} !important;
   }
   ${({ selected }) => css`
