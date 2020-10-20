@@ -6,8 +6,8 @@ import { useRequestLog } from "./useRequestLog";
 const OperationSection = () => {
   const requestsLog = useRequestLog();
 
-  const { requests, handleSelect } = requestsLog;
-
+  const { requests, handleSelect, selected } = requestsLog;
+ 
   return (
     <div>
       <Header>Operations</Header>
@@ -16,6 +16,7 @@ const OperationSection = () => {
           <Operation
             key={`${req.operation}-${index}`}
             onClick={() => handleSelect(index)}
+            selected={req.operation === selected?.operation}
           >
             {index + 1}. {req.operation}
           </Operation>
