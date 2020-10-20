@@ -5,14 +5,14 @@ const colors = {
   D300: "#424242",
   D400: "#303030",
   D500: "#212121",
-  L500: "#DDF2F2",
+  L500: "#DDF2F2"
 };
 
 export const GlobalStyles = createGlobalStyle`
   body {
     margin: 0;
     padding: 0;
-    font-size: 16px;
+    font-size: 14px;
     background: ${colors.D500};
     color: ${colors.L500}
   }
@@ -50,7 +50,7 @@ export const Grid = styled.div`
 `;
 
 export const Header = styled.div`
-  font-size: 20px;
+  font-size: 18px;
   padding: 2px;
   padding-left: 4px;
   padding-bottom: 6px;
@@ -68,17 +68,17 @@ export const Operation = styled.div<{ selected: boolean }>`
   padding: 3px;
   border-bottom: 1px solid #000;
   cursor: pointer;
-  font-size: 18px;
+  font-size: 16px;
   &:hover,
   &:focus {
     background: ${colors.D300} !important;
   }
   ${({ selected }) => css`
-  ${selected &&
-  css`
-  background: ${colors.D300};
+    ${selected &&
+      css`
+        background: ${colors.D300};
+      `}
   `}
-`}
 `;
 
 export const ToolbarWrapper = styled.div`
@@ -98,7 +98,7 @@ export const CopyButton = styled.span`
   position: absolute;
   right: 2px;
   top: 2px;
-  font-size: 12px;
+  font-size: 10px;
   border: 1px solid rgba(255, 255, 255, 0.3);
   background: rgba(255, 255, 255, 0.1);
   border-radius: 2px;

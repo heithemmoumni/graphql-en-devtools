@@ -15,7 +15,7 @@ const Panel = () => {
   const { requests, pushRequest, selected } = requestsLog;
 
   useEffect(() => {
-    chrome.devtools.network.onRequestFinished.addListener((request) => {
+    chrome.devtools.network.onRequestFinished.addListener(request => {
       const url = request.request.url;
 
       if (request.request.method === "POST" && url.includes("graphql")) {
@@ -23,19 +23,19 @@ const Panel = () => {
 
         const req = flatten(postData);
 
-        request.getContent((body) => {
+        request.getContent(body => {
           pushRequest({
             operation: req.operationName.trim(),
             variables: req.variables,
             query: req.query,
             content: flatten(JSON.parse(body)),
             status: request.response.status,
-            time: Number(request.time.toFixed(0)),
+            time: Number(request.time.toFixed(0))
           });
         });
       }
     });
-  }, []);
+  }, [pushRequest]);
 
   useEffect(() => {
     Prism.highlightAll();

@@ -7,7 +7,7 @@ const OperationSection = () => {
   const requestsLog = useRequestLog();
 
   const { requests, handleSelect, selected } = requestsLog;
- 
+
   return (
     <div>
       <Header>Operations</Header>
